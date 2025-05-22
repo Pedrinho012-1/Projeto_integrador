@@ -1,0 +1,150 @@
+.pagina-tarefas {
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+.container-tarefas {
+    max-width: 960px;
+    margin: 0  auto;
+}
+
+.filtros-tarefas {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    display:  flex;
+    align-items:  center;
+}
+
+.filtro label {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.filtro select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.lista-tarefas {
+    list-style: none;
+    padding: 0;
+}
+
+.tarefa {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho-tarefa {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icone-tarefa {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.cabecalho-tarefa h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.status {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.descricao-tarefa {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.detalhes-tarefas {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.detalhes-tarefa i {
+    margin-right: 5px;
+}
+
+.acoes-tarefa {
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+}
+
+.btn-concluit, .btn-detalhes {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.btn-concluir {
+    color: green;
+}
+
+.btn-detalhes {
+    color: blue;
+}
+
+.tarefas.a-fazer .cabcalho-tarefa h3, .tarefa.a-fazer .status {
+    color: blue;
+}
+
+.tarefa.em-andamento .cabecalho-tarefa h3, .tarefa.em-andamento .status {
+    color: orange;
+}
+
+.tarefa.concluido .cabecalho-tarefa h3, .tarefa.concluido .status{
+    color: green;
+}
+
+tarefa.atrasado .cabecalho-tarefa h3, .tarefa.atrasado .status {
+    color: red;
+}
+
+.prioridade {
+     font-weight: bold;
+}
+
+.prioridade.urgente {
+    color: red;
+}
+
+.proridade.importante {
+    color: orange;
+}
+
+.detalhes-completos {
+    display: none; /* Esconde por padrão */
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.detalhes-completos:target {
+    display: block; /* Mostra quando o #id está na URL */
+}
