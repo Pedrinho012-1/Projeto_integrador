@@ -5,6 +5,11 @@
     <title>Tarefas - Escolink</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tarefas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -17,10 +22,109 @@
     </header>
 
 
-    <main class="frase">
-        <h1>Tarefas</h1>
-        <p>Aqui você pode acompanhar as tarefas dos alunos.</p>
-        <!-- Adicione mais conteúdo conforme necessário -->
+    <main class="pagina-tarefas">
+        <div class="container-tarefas">
+            <h1>Tarefas</h1>
+            <p>Acompanhe as atividades escolares dos alunos.</p>
+
+            <div class="filtros-tarefas">
+                <div class="filtro">
+                    <label for="turma">Turma:</label>
+                    <select id="turma">
+                        <option value="todas">Todas</option>
+                        <option value="1a">1º Ano A</option>
+                        <option value="2b">2º Ano B</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <label for="status">Status:</label>
+                    <select id="status">
+                        <option value="todos">Todos</option>
+                        <option value="a-fazer"><i class="fas fa-circle" style="color: blue;"></i> A Fazer</option>
+                        <option value="em-andamento"><i class="fas fa-spinner fa-spin" style="color: yellow;"></i> Em Andamento</option>
+                        <option value="concluido"><i class="fas fa-check-circle" style="color: green;"></i> Concluído</option>
+                        <option value="atrasado"><i class="fas fa-exclamation-circle" style="color: red;"></i> Atrasado</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <label for="componente">Componente:</label>
+                    <select id="componente">
+                        <option value="todos">Todos</option>
+                        <option value="portugues">Língua Portuguesa</option>
+                        <option value="matematica">Matemática</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="lista-tarefas">
+                <li class="tarefa a-fazer">
+                    <div class="cabecalho-tarefa">
+                        <i class="fas fa-book-open icone-tarefa"></i>
+                        <h3>Leitura do Capítulo 1</h3>
+                        <span class="status"><i class="fas fa-circle" style="color: blue;"></i> A Fazer</span>
+                    </div>
+                    <p class="descricao-tarefa">Ler o capítulo introdutório do livro "A Descoberta".</p>
+                    <div class="detalhes-tarefa">
+                        <span class="data-entrega"><i class="far fa-calendar-alt"></i> Entrega: 25/05/2025</span>
+                        <span class="prioridade"><i class="fas fa-flag" style="color: lightgray;"></i> Normal</span>
+                    </div>
+                    <div class="acoes-tarefa">
+                        <button class="btn-concluir" title="Marcar como concluído"><i class="fas fa-check"></i></button>
+                        <a href="#" class="btn-detalhes" title="Ver detalhes"><i class="fas fa-eye"></i></a>
+                    </div>
+                </li>
+
+                <li class="tarefa em-andamento">
+                    <div class="cabecalho-tarefa">
+                        <i class="fas fa-pencil-alt icone-tarefa"></i>
+                        <h3>Exercícios de Matemática</h3>
+                        <span class="status"><i class="fas fa-spinner fa-spin" style="color: yellow;"></i> Em Andamento</span>
+                    </div>
+                    <p class="descricao-tarefa">Resolver os exercícios das páginas 10 a 15.</p>
+                    <div class="detalhes-tarefa">
+                        <span class="data-entrega"><i class="far fa-calendar-alt"></i> Entrega: 28/05/2025</span>
+                        <span class="prioridade"><i class="fas fa-flag" style="color: orange;"></i> Importante</span>
+                    </div>
+                    <div class="acoes-tarefa">
+                        <button class="btn-concluir" title="Marcar como concluído"><i class="fas fa-check"></i></button>
+                        <a href="#" class="btn-detalhes" title="Ver detalhes"><i class="fas fa-eye"></i></a>
+                    </div>
+                </li>
+
+                <li class="tarefa concluido">
+                    <div class="cabecalho-tarefa">
+                        <i class="fas fa-users icone-tarefa"></i>
+                        <h3>Trabalho em Grupo - História</h3>
+                        <span class="status"><i class="fas fa-check-circle" style="color: green;"></i> Concluído</span>
+                    </div>
+                    <p class="descricao-tarefa">Apresentação sobre a Revolução Industrial.</p>
+                    <div class="detalhes-tarefa">
+                        <span class="data-entrega"><i class="far fa-calendar-alt"></i> Entrega: 15/05/2025</span>
+                        <span class="prioridade"><i class="fas fa-flag" style="color: lightgray;"></i> Normal</span>
+                    </div>
+                    <div class="acoes-tarefa">
+                        <a href="#" class="btn-detalhes" title="Ver detalhes"><i class="fas fa-eye"></i></a>
+                    </div>
+                </li>
+
+                <li class="tarefa atrasado">
+                    <div class="cabecalho-tarefa">
+                        <i class="fas fa-globe icone-tarefa"></i>
+                        <h3>Redação sobre o Meio Ambiente</h3>
+                        <span class="status"><i class="fas fa-exclamation-circle" style="color: red;"></i> Atrasado</span>
+                    </div>
+                    <p class="descricao-tarefa">Escrever uma redação de no mínimo 30 linhas.</p>
+                    <div class="detalhes-tarefa">
+                        <span class="data-entrega"><i class="far fa-calendar-alt"></i> Entrega: 10/05/2025</span>
+                        <span class="prioridade"><i class="fas fa-flag" style="color: red;"></i> Urgente</span>
+                    </div>
+                    <div class="acoes-tarefa">
+                        <button class="btn-concluir" title="Marcar como concluído"><i class="fas fa-check"></i></button>
+                        <a href="#" class="btn-detalhes" title="Ver detalhes"><i class="fas fa-eye"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </main>
 
 
@@ -28,9 +132,9 @@
         <div class="texto-centralizado">
             <h3>Contatos</h3>
             <ul>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
-                <li>Instagram</li>
+                <li><img src="assets/imgs/facebook.webp" alt="Ícone facebook">Facebook</li>
+                <li><img src="assets/imgs/linkedin.webp" alt="Ícone linkedin">LinkedIn</li>
+                <li><img src="assets/imgs/instagram.png" alt="Ícone instagram"> Instagram</li>
             </ul>
             <h5>Todos os direitos reservados - Escolink</h5>
         </div>
